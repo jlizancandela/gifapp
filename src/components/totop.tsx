@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import styles from "../assets/resultado.module.css";
-const { totop, visibleToTop } = styles;
+const { toTop, visibleToTop } = styles;
 
 export const ToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
-
+  const clase = isVisible ? `${toTop} ${visibleToTop}` : `${toTop}`;
   useEffect(() => {
     const onScroll = () => {
       isVisible && window.scrollY == 0
@@ -16,8 +16,6 @@ export const ToTop = () => {
       window.removeEventListener("scroll", onScroll);
     };
   }, [isVisible]);
-
-  const clase = isVisible ? `${totop} ${visibleToTop}` : `${totop}`;
 
   const scrollToTop = () => {
     window.scrollTo({

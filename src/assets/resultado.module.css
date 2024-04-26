@@ -53,6 +53,11 @@
 
 .toTop {
   display: none;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  font-size: 20px;
+  padding: 10px;
 }
 
 .visibleToTop {
